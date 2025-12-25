@@ -389,7 +389,7 @@ class CryptoApp(QMainWindow):
         label_size.setStyleSheet("font-weight: 600; color: #374151; font-size: 20px;")
         size_layout.addWidget(label_size)
         self.rsa_key_size_combo = CustomComboBox()
-        self.rsa_key_size_combo.addItems(["1024 bits", "2048 bits", "4096 bits"])
+        self.rsa_key_size_combo.addItems(["512 bits", "1024 bits", "2048 bits"])
         self.rsa_key_size_combo.setCurrentIndex(1)
         self.rsa_key_size_combo.setFixedHeight(45)
         self.rsa_key_size_combo.setStyleSheet("""
@@ -1063,22 +1063,22 @@ Cách hoạt động:
         QMessageBox.information(self, "Cleared", "All inputs and outputs have been cleared!")
 
     def rsa_show_info(self):
-        info_text = """RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem.
+        info_text = """RSA (Rivest-Shamir-Adleman) là hệ thống mật mã khóa công khai.
 
-Key Features:
-• Asymmetric encryption (public/private keys)
-• Secure data transmission
-• Digital signatures
-• Key exchange protocol
+Các đặc điểm chính:
+• Mã hóa bất đối xứng (dùng khóa công khai/khóa riêng)
+• Truyền tải dữ liệu an toàn
+• Hỗ trợ chữ ký số
+• Giao thức trao đổi khóa
 
-How it works:
-1. Generate key pair (public/private)
-2. Encrypt with public key
-3. Decrypt with private key
-4. Keys are mathematically linked but one cannot be derived from the other
+Cách hoạt động:
+1. Tạo cặp khóa (Public Key / Private Key)
+2. Mã hóa văn bản bằng khóa công khai (Public Key)
+3. Giải mã văn bản bằng khóa riêng (Private Key)
+4. Hai khóa có liên kết toán học chặt chẽ, nhưng không thể suy ra khóa riêng từ khóa công khai.
 
-Security: Based on the practical difficulty of factoring large prime numbers."""
-        QMessageBox.information(self, "RSA Algorithm Info", info_text)
+Độ an toàn: Dựa trên độ khó thực tế của bài toán phân tích thừa số các số nguyên tố lớn."""
+        QMessageBox.information(self, "Thông tin thuật toán RSA", info_text)
 
     # ==================== CONNECTIONS ====================
     def setup_connections(self):
